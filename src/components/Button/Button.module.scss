@@ -1,0 +1,19 @@
+.btn {
+    padding: 0.5rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    text-decoration: none;
+    border-radius: 2rem;
+    border: 3px solid currentColor;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+
+    &:hover,
+    &:focus {
+        background-color: var(--color-secondary);
+        color: var(--color-tertiary);
+    }
+}

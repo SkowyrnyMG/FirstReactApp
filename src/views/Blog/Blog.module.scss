@@ -1,0 +1,39 @@
+.wrapper {
+    height: 90%;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.wrapperBlur {
+    @extend .wrapper;
+
+    filter: blur(5px) saturate(20%);
+}
+
+@keyframes from-right {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mainHeading {
+    grid-column: 4/ 10;
+    grid-row: 3 / 4;
+    font-size: 3rem;
+    opacity: 0;
+    animation: from-right 1s 0.25s forwards;
+}
+
+.articlesHolder {
+    margin: 5rem 0;
+    width: 80%;
+}

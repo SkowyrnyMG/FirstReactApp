@@ -1,0 +1,76 @@
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.wrapper {
+    position: fixed;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 1rem;
+    transition: all 0.5s;
+    opacity: 0;
+    animation: appear 0.5s forwards;
+}
+
+.modalBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    // height: 70vh;
+    width: 32vw;
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    transform: translateY(-50%);
+    background-color: var(--color-main-light-1);
+    border-radius: 2rem;
+    box-shadow: 0 1rem 2rem -1rem var(--color-secondary);
+}
+
+.closeModalBtn {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    padding: 0.7rem;
+    background: none;
+    color: var(--color-tertiary);
+    border: 2px solid var(--color-tertiary);
+    cursor: pointer;
+    transition: all 0.25s;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 70%;
+        height: 2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: currentColor;
+    }
+
+    &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:hover {
+        background-color: var(--color-tertiary);
+        color: var(--color-secondary);
+    }
+}

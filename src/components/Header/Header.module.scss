@@ -1,0 +1,13 @@
+.wrapper {
+    padding: 1rem;
+    display: grid;
+    height: 12vh;
+    min-height: 7.5rem;
+    grid-template-columns: 100px 150px 1fr 100px;
+    background-color: var(--color-secondary);
+    box-shadow: 0 1rem 1rem -1rem var(--color-secondary);
+}
+
+.logoImage {
+    grid-column: 2 / 3;
+}

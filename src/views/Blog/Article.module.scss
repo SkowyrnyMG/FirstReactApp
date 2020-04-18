@@ -1,0 +1,51 @@
+@keyframes fromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transfrom: translateY(0);
+    }
+}
+
+.wrapper {
+    display: flex;
+    padding: 2rem;
+    border: 1px solid rgba(grey, 0.5);
+    border-radius: 0.5rem;
+    opacity: 0;
+    animation: fromBottom 0.5s 0.5s forwards ease-out;
+
+    &:not(:last-child) {
+        margin-bottom: 5rem;
+    }
+}
+
+.articleImg {
+    margin-top: 4rem;
+    max-width: 30%;
+    max-height: 20rem;
+
+    border-radius: inherit;
+}
+
+.articleImgDefault {
+    @extend .articleImg;
+    width: 30rem;
+    height: 20rem;
+    background-color: green;
+    background: url('https://c1.wallpaperflare.com/preview/722/907/815/question-mark-hand-drawn-solution-think.jpg')
+        no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contentBox {
+    flex: 1;
+    padding: 0 3rem 0 3rem;
+}
+
+.paragraph {
+    font-size: 1.2rem;
+}

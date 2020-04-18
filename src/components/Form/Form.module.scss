@@ -1,0 +1,9 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+
+    & > *:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}

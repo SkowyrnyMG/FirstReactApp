@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    box-shadow: 0 -1rem 1rem -1rem var(--color-secondary);
+    background-color: var(--color-secondary);
+}
+
+.imageLogo {
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.info {
+    color: var(--color-main-light-1);
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
