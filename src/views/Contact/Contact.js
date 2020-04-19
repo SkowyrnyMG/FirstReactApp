@@ -26,10 +26,20 @@ const Contact = () => (
                     >>Mateusz Gruźla
                 </p>
             </div>
-            <form className={styles.formWrapper}>
-                <Input inputName='name' />
-                <Input inputName='email' />
-                <Input inputName='message' textarea />
+            <form
+                className={styles.formWrapper}
+                name='contact'
+                method='POST'
+                data-netlify='true'
+                data-netlify-recaptcha='true'
+                data-netlify-honeypot='bot-field'
+            >
+                <input type='hidden' name='form-name' value='contact' />
+                <input type='hidden' name='bot-field' />
+                <Input inputName='name' required />
+                <Input inputName='email' required />
+                <Input inputName='message' textarea required />
+                <div data-netlify-recaptcha='true'></div>
                 <Button>send!</Button>
             </form>
         </div>
