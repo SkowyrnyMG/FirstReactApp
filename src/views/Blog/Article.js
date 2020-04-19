@@ -23,8 +23,8 @@ const Article = ({ img, title, paragraph }) => {
 
 Article.propTypes = {
     img: PropTypes.string,
-    title: PropTypes.string.isRequired,
-    paragraph: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
 };
 
 export default Article;

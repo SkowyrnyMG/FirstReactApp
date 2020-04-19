@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Blog.module.scss';
+import BlogContext from '../../context';
 import Button from '../../components/Button/Button';
 import Article from './Article';
 import Modal from './Modal';
@@ -35,14 +36,27 @@ class Blog extends React.Component {
         });
     };
 
+    addPost = (e, newItem) => {
+        e.preventDefault();
+
+        this.setState((prevState) => ({
+            items: [...prevState.items, newItem],
+        }));
+        this.closeModal();
+    };
+
     render() {
+        const { isModalOpen } = this.state;
+        const contextElement = {
+            ...this.state,
+            addPost: this.addPost,
+        };
+
         return (
-            <>
+            <BlogContext.Provider value={contextElement}>
                 <div
                     className={
-                        this.state.isModalOpen
-                            ? styles.wrapperBlur
-                            : styles.wrapper
+                        isModalOpen ? styles.wrapperBlur : styles.wrapper
                     }
                 >
                     <h2 className={styles.mainHeading}>
@@ -57,10 +71,10 @@ class Blog extends React.Component {
                         Add new post!
                     </Button>
                 </div>
-                {this.state.isModalOpen ? (
+                {isModalOpen ? (
                     <Modal handleClickFn={() => this.closeModal} />
                 ) : null}
-            </>
+            </BlogContext.Provider>
         );
     }
 }
